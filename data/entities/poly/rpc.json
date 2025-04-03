@@ -2,7 +2,7 @@
   {
     "name": "Account",
     "description": "Represents a blockchain account with balance and contract code.",
-    "data_source": "https://etherscan.io/address/",
+    "live_preview": "https://etherscan.io/address/",
     "fields": {
       "address": "string",
       "nonce": "integer",
@@ -13,7 +13,7 @@
   {
     "name": "Block",
     "description": "Represents a blockchain block.",
-    "data_source": "https://etherscan.io/block/",
+    "live_preview": "https://etherscan.io/block/",
     "fields": {
       "number": "integer",
       "timestamp": "integer",
@@ -37,7 +37,7 @@
   {
     "name": "Transaction",
     "description": "Represents a blockchain transaction.",
-    "data_source": "https://etherscan.io/tx/",
+    "live_preview": "https://etherscan.io/tx/",
     "fields": {
       "hash": "string",
       "transaction_type": "string",
