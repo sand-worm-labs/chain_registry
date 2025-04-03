@@ -1,0 +1,106 @@
+ [
+        {
+            "name": "Sui",
+            "short_code": "sui"
+        },
+        {
+            "name": "SuiDevnet",
+            "short_code": "suidev"
+        },
+        {
+            "name": "SuiTestnet",
+            "short_code": "suitest"
+        },
+        {
+            "name": "Ethereum",
+            "short_code": "eth"
+        },
+        {
+            "name": "Sepolia",
+            "short_code": "sepolia"
+        },
+        {
+            "name": "Arbitrum",
+            "short_code": "arb"
+        },
+        {
+            "name": "Base",
+            "short_code": "base"
+        },
+        {
+            "name": "Blast",
+            "short_code": "blast"
+        },
+        {
+            "name": "Optimism",
+            "short_code": "op"
+        },
+        {
+            "name": "Polygon",
+            "short_code": "poly"
+        },
+        {
+            "name": "Mantle",
+            "short_code": "mnt"
+        },
+        {
+            "name": "Zksync",
+            "short_code": "zks"
+        },
+        {
+            "name": "Taiko",
+            "short_code": "taiko"
+        },
+        {
+            "name": "Celo",
+            "short_code": "celo"
+        },
+        {
+            "name": "Avalanche",
+            "short_code": "avax"
+        },
+        {
+            "name": "Scroll",
+            "short_code": "scroll"
+        },
+        {
+            "name": "Bnb",
+            "short_code": "bnb"
+        },
+        {
+            "name": "Linea",
+            "short_code": "linea"
+        },
+        {
+            "name": "Zora",
+            "short_code": "zora"
+        },
+        {
+            "name": "Moonbeam",
+            "short_code": "glmr"
+        },
+        {
+            "name": "Moonriver",
+            "short_code": "movr"
+        },
+        {
+            "name": "Ronin",
+            "short_code": "ron"
+        },
+        {
+            "name": "Fantom",
+            "short_code": "ftm"
+        },
+        {
+            "name": "Kava",
+            "short_code": "kava"
+        },
+        {
+            "name": "Gnosis",
+            "short_code": "gno"
+        },
+        {
+            "name": "Mekong",
+            "short_code": "mekong"
+        }
+]
