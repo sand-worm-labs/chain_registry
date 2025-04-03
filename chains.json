@@ -1,5 +1,4 @@
-{
-    "chains": [
+ [
         {
             "name": "Sui",
             "short_code": "sui"
@@ -104,5 +103,4 @@
             "name": "Mekong",
             "short_code": "mekong"
         }
-    ]
-}
+]
