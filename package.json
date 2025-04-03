@@ -1,0 +1,22 @@
+{
+  "name": "chain-registry",
+  "version": "1.0.0",
+  "description": "A repository that hosts all supported blockchain networks, tables, and fields.",
+  "scripts": {
+    "prepare": "husky install",
+    "lint:json": "find . -name '*.json' -exec jq empty {} \\;",
+    "format": "prettier --write .",
+    "lint-staged": "lint-staged"
+  },
+  "devDependencies": {
+    "husky": "^9.0.0",
+    "lint-staged": "^15.0.0",
+    "prettier": "^3.0.0"
+  },
+  "lint-staged": {
+    "*.json": [
+      "jq empty",
+      "prettier --write"
+    ]
+  }
+}

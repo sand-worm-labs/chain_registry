@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Check if jq is installed
+if ! command -v jq &> /dev/null; then
+  echo "jq is not installed. Install it to validate JSON files."
+  exit 1
+fi
+
+# Validate all JSON files
+for file in $(git diff --cached --name-only | grep '\.json$'); do
+  if ! jq empty "$file" 2>/dev/null; then
+    echo "❌ Invalid JSON: $file"
+    exit 1
+  fi
+done
+
+echo "✅ All JSON files are valid."
+exit 0
