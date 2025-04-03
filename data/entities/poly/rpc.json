@@ -1,0 +1,61 @@
+[
+  {
+    "name": "Account",
+    "description": "Represents a blockchain account with balance and contract code.",
+    "data_source": "https://etherscan.io/address/",
+    "fields": {
+      "address": "string",
+      "nonce": "integer",
+      "balance": "bigint",
+      "code": "string"
+    }
+  },
+  {
+    "name": "Block",
+    "description": "Represents a blockchain block.",
+    "data_source": "https://etherscan.io/block/",
+    "fields": {
+      "number": "integer",
+      "timestamp": "integer",
+      "size": "integer",
+      "hash": "string",
+      "parent_hash": "string",
+      "state_root": "string",
+      "transactions_root": "string",
+      "receipts_root": "string",
+      "logs_bloom": "string",
+      "extra_data": "string",
+      "mix_hash": "string",
+      "total_difficulty": "bigint",
+      "base_fee_per_gas": "bigint",
+      "withdrawals_root": "string",
+      "blob_gas_used": "integer",
+      "excess_blob_gas": "integer",
+      "parent_beacon_block_root": "string"
+    }
+  },
+  {
+    "name": "Transaction",
+    "description": "Represents a blockchain transaction.",
+    "data_source": "https://etherscan.io/tx/",
+    "fields": {
+      "hash": "string",
+      "transaction_type": "string",
+      "from": "string",
+      "to": "string",
+      "data": "string",
+      "value": "bigint",
+      "gas_price": "bigint",
+      "gas": "integer",
+      "status": "string",
+      "chain_id": "integer",
+      "v": "integer",
+      "r": "string",
+      "s": "string",
+      "max_fee_per_blob_gas": "bigint",
+      "max_fee_per_gas": "bigint",
+      "max_priority_fee_per_gas": "bigint",
+      "y_parity": "integer"
+    }
+  }
+]
