@@ -1,1 +1,1 @@
-# suppoerted_tables
+# supported_tables
