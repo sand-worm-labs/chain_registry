@@ -1,0 +1,16 @@
+name: Validate JSON
+
+on: [pull_request, push]
+
+jobs:
+  validate-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Validate JSON
+        run: find . -name "*.json" -exec jq empty {} \;
