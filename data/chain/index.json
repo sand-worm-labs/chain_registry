@@ -102,5 +102,9 @@
         {
             "name": "Mekong",
             "short_code": "mekong"
+        },
+        {
+            "name": "Mina",
+            "short_code": "mina"
         }
 ]
