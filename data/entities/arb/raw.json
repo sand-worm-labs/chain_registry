@@ -6,8 +6,8 @@
     "fields": {
       "address": "bytes20",
       "nonce": "uint64",
-      "balance": "bigint",       // variable size big integer (could be uint256)
-      "code": "bytes"            // variable length bytecode
+      "balance": "bigint",      
+      "code": "bytes"           
     }
   },
   {
@@ -26,7 +26,7 @@
       "logs_bloom": "bytes256",
       "extra_data": "bytes",
       "mix_hash": "bytes32",
-      "total_difficulty": "bigint",      // variable size or uint256 if fixed
+      "total_difficulty": "bigint",     
       "base_fee_per_gas": "bigint",
       "withdrawals_root": "bytes32",
       "blob_gas_used": "bigint",
