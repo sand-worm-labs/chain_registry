@@ -1,61 +1,100 @@
 [
   {
-    "name": "Account",
-    "description": "Represents a blockchain account with balance and contract code.",
-    "live_preview": "https://etherscan.io/address/",
+    "name": "Uniswap_pool",
+    "description": "Represents a Uniswap liquidity pool with token pair and state.",
+    "live_preview": "",
     "fields": {
-      "address": "string",
-      "nonce": "integer",
-      "balance": "bigint",
-      "code": "string"
+      "id": "string",
+      "token0": "string",
+      "token1": "string",
+      "fee_tier": "int",
+      "liquidity": "string",
+      "sqrt_price_x96": "string",
+      "tick": "int",
+      "created_at": "timestamp",
+      "updated_at": "timestamp"
     }
   },
   {
-    "name": "Block",
-    "description": "Represents a blockchain block.",
-    "live_preview": "https://etherscan.io/block/",
+    "name": "Uniswap_liquidity_position",
+    "description": "User liquidity position in a Uniswap pool.",
+    "live_preview": "",
     "fields": {
-      "number": "integer",
-      "timestamp": "integer",
-      "size": "integer",
-      "hash": "string",
-      "parent_hash": "string",
-      "state_root": "string",
-      "transactions_root": "string",
-      "receipts_root": "string",
-      "logs_bloom": "string",
-      "extra_data": "string",
-      "mix_hash": "string",
-      "total_difficulty": "bigint",
-      "base_fee_per_gas": "bigint",
-      "withdrawals_root": "string",
-      "blob_gas_used": "integer",
-      "excess_blob_gas": "integer",
-      "parent_beacon_block_root": "string"
+      "id": "string",
+      "pool_id": "string",
+      "owner": "string",
+      "liquidity": "string",
+      "tick_lower": "int",
+      "tick_upper": "int",
+      "tokens_owed0": "string",
+      "tokens_owed1": "string",
+      "created_at": "timestamp",
+      "updated_at": "timestamp"
     }
   },
   {
-    "name": "Transaction",
-    "description": "Represents a blockchain transaction.",
-    "live_preview": "https://etherscan.io/tx/",
+    "name": "Uniswap_swap",
+    "description": "Swap event in a Uniswap pool.",
+    "live_preview": "",
     "fields": {
-      "hash": "string",
-      "transaction_type": "string",
-      "from": "string",
-      "to": "string",
-      "data": "string",
-      "value": "bigint",
-      "gas_price": "bigint",
-      "gas": "integer",
-      "status": "string",
-      "chain_id": "integer",
-      "v": "integer",
-      "r": "string",
-      "s": "string",
-      "max_fee_per_blob_gas": "bigint",
-      "max_fee_per_gas": "bigint",
-      "max_priority_fee_per_gas": "bigint",
-      "y_parity": "integer"
+      "id": "string",
+      "pool_id": "string",
+      "sender": "string",
+      "recipient": "string",
+      "amount0_in": "string",
+      "amount1_in": "string",
+      "amount0_out": "string",
+      "amount1_out": "string",
+      "sqrt_price_x96": "string",
+      "tick": "int",
+      "liquidity": "string",
+      "timestamp": "timestamp"
+    }
+  },
+  {
+    "name": "Uniswap_mint",
+    "description": "Liquidity added to a Uniswap pool.",
+    "live_preview": "",
+    "fields": {
+      "id": "string",
+      "pool_id": "string",
+      "owner": "string",
+      "amount0": "string",
+      "amount1": "string",
+      "liquidity": "string",
+      "tick_lower": "int",
+      "tick_upper": "int",
+      "timestamp": "timestamp"
+    }
+  },
+  {
+    "name": "Uniswap_burn",
+    "description": "Liquidity removed from a Uniswap pool.",
+    "live_preview": "",
+    "fields": {
+      "id": "string",
+      "pool_id": "string",
+      "owner": "string",
+      "amount0": "string",
+      "amount1": "string",
+      "liquidity": "string",
+      "tick_lower": "int",
+      "tick_upper": "int",
+      "timestamp": "timestamp"
+    }
+  },
+  {
+    "name": "Uniswap_tick",
+    "description": "Tick state in a Uniswap pool.",
+    "live_preview": "",
+    "fields": {
+      "pool_id": "string",
+      "tick_index": "int",
+      "liquidity_gross": "string",
+      "liquidity_net": "string",
+      "fee_growth_outside0_x128": "string",
+      "fee_growth_outside1_x128": "string",
+      "timestamp": "timestamp"
     }
   }
 ]
