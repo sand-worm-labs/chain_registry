@@ -4,10 +4,10 @@
     "description": "Represents a blockchain account with balance and contract code.",
     "live_preview": "https://etherscan.io/address/",
     "fields": {
-      "address": "string",
-      "nonce": "integer",
-      "balance": "bigint",
-      "code": "string"
+      "address": "bytes20",
+      "nonce": "uint64",
+      "balance": "bigint",       // variable size big integer (could be uint256)
+      "code": "bytes"            // variable length bytecode
     }
   },
   {
@@ -15,23 +15,23 @@
     "description": "Represents a blockchain block.",
     "live_preview": "https://etherscan.io/block/",
     "fields": {
-      "number": "integer",
-      "timestamp": "integer",
-      "size": "integer",
-      "hash": "string",
-      "parent_hash": "string",
-      "state_root": "string",
-      "transactions_root": "string",
-      "receipts_root": "string",
-      "logs_bloom": "string",
-      "extra_data": "string",
-      "mix_hash": "string",
-      "total_difficulty": "bigint",
+      "number": "uint64",
+      "timestamp": "uint64",
+      "size": "uint64",
+      "hash": "bytes32",
+      "parent_hash": "bytes32",
+      "state_root": "bytes32",
+      "transactions_root": "bytes32",
+      "receipts_root": "bytes32",
+      "logs_bloom": "bytes256",
+      "extra_data": "bytes",
+      "mix_hash": "bytes32",
+      "total_difficulty": "bigint",      // variable size or uint256 if fixed
       "base_fee_per_gas": "bigint",
-      "withdrawals_root": "string",
-      "blob_gas_used": "integer",
-      "excess_blob_gas": "integer",
-      "parent_beacon_block_root": "string"
+      "withdrawals_root": "bytes32",
+      "blob_gas_used": "bigint",
+      "excess_blob_gas": "bigint",
+      "parent_beacon_block_root": "bytes32"
     }
   },
   {
@@ -39,23 +39,23 @@
     "description": "Represents a blockchain transaction.",
     "live_preview": "https://etherscan.io/tx/",
     "fields": {
-      "hash": "string",
-      "transaction_type": "string",
-      "from": "string",
-      "to": "string",
-      "data": "string",
+      "hash": "bytes32",
+      "transaction_type": "uint8",
+      "from": "bytes20",
+      "to": "bytes20",
+      "data": "bytes",
       "value": "bigint",
       "gas_price": "bigint",
-      "gas": "integer",
-      "status": "string",
-      "chain_id": "integer",
-      "v": "integer",
-      "r": "string",
-      "s": "string",
+      "gas": "uint64",
+      "status": "uint8",
+      "chain_id": "uint64",
+      "v": "bigint",
+      "r": "bytes32",
+      "s": "bytes32",
       "max_fee_per_blob_gas": "bigint",
       "max_fee_per_gas": "bigint",
       "max_priority_fee_per_gas": "bigint",
-      "y_parity": "integer"
+      "y_parity": "uint8"
     }
   }
 ]
