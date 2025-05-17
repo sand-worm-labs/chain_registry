@@ -1,61 +1,114 @@
 [
   {
     "name": "Account",
-    "description": "Represents a blockchain account with balance and contract code.",
-    "live_preview": "https://etherscan.io/address/",
+    "description": "Represents a Sui account with associated balances, stakes, and transaction metadata.",
+    "live_preview": "https://suiexplorer.com/address/",
     "fields": {
-      "address": "bytes20",
-      "nonce": "uint64",
-      "balance": "bigint",      
-      "code": "bytes"           
+      "address": "address",
+      "sui_balance": "uint64",
+      "object_count": "uint32",
+      "coin_count": "uint32",
+      "latest_transaction_id": "hash",
+      "latest_transaction_time": "uint64",
+      "stake_amount": "uint64",
+      "active_delegations": "uint32",
+      "chain": "string",
+      "nfts_owned": "uint32",
+      "transaction_count": "uint64"
     }
   },
   {
-    "name": "Block",
-    "description": "Represents a blockchain block.",
-    "live_preview": "https://etherscan.io/block/",
+    "name": "Checkpoint",
+    "description": "Represents a checkpoint in the Sui blockchain.",
+    "live_preview": "https://suiexplorer.com/checkpoint/",
     "fields": {
+      "chain": "string",
       "number": "uint64",
       "timestamp": "uint64",
-      "size": "uint64",
-      "hash": "bytes32",
-      "parent_hash": "bytes32",
-      "state_root": "bytes32",
-      "transactions_root": "bytes32",
-      "receipts_root": "bytes32",
-      "logs_bloom": "bytes256",
-      "extra_data": "bytes",
-      "mix_hash": "bytes32",
-      "total_difficulty": "bigint",     
-      "base_fee_per_gas": "bigint",
-      "withdrawals_root": "bytes32",
-      "blob_gas_used": "bigint",
-      "excess_blob_gas": "bigint",
-      "parent_beacon_block_root": "bytes32"
+      "transactions": "uint32",
+      "epoch": "uint64",
+      "digest": "bytes32",
+      "previous_digest": "bytes32",
+      "computation_cost": "bigint",
+      "storage_cost": "bigint",
+      "storage_rebate": "bigint",
+      "non_refundable_storage_fee": "bigint",
+      "network_total_transactions": "uint64",
+      "validator_signature": "bytes"
     }
   },
   {
     "name": "Transaction",
-    "description": "Represents a blockchain transaction.",
-    "live_preview": "https://etherscan.io/tx/",
+    "description": "Represents a Sui transaction and its metadata.",
+    "live_preview": "https://suiexplorer.com/txblock/",
     "fields": {
-      "hash": "bytes32",
-      "transaction_type": "uint8",
-      "from": "bytes20",
-      "to": "bytes20",
-      "data": "bytes",
-      "value": "bigint",
-      "gas_price": "bigint",
-      "gas": "uint64",
-      "status": "uint8",
-      "chain_id": "uint64",
-      "v": "bigint",
-      "r": "bytes32",
-      "s": "bytes32",
-      "max_fee_per_blob_gas": "bigint",
-      "max_fee_per_gas": "bigint",
-      "max_priority_fee_per_gas": "bigint",
-      "y_parity": "uint8"
+      "type": "string",
+      "hash": "hash",
+      "sender": "address",
+      "recipient": "address",
+      "data": "hex",
+      "gas_budget": "uint64",
+      "gas_price": "uint64",
+      "gas_used": "uint64",
+      "status": "boolean",
+      "executed_epoch": "uint64",
+      "checkpoint": "uint64",
+      "timestamp_ms": "uint64",
+      "total_events": "uint32",
+      "event_digests": "string[]",
+      "raw_transaction": "bytes",
+      "total_object_changes": "uint32",
+      "transaction_kind": "string",
+      "version": "uint64",
+      "signature_scheme": "string",
+      "public_key": "bytes",
+      "signature": "bytes"
+    }
+  },
+  {
+    "name": "Coin",
+    "description": "Metadata about Sui-based coins/tokens.",
+    "live_preview": "https://suiexplorer.com/object/",
+    "fields": {
+      "decimals": "uint8",
+      "description": "string",
+      "icon_url": "string",
+      "name": "string",
+      "symbol": "string",
+      "chain": "string"
+    }
+  },
+  {
+    "name": "Object",
+    "description": "Generic object on the Sui blockchain, including Move objects.",
+    "live_preview": "https://suiexplorer.com/object/",
+    "fields": {
+      "objectId": "object",
+      "version": "uint64",
+      "digest": "bytes32",
+      "type": "string",
+      "owner": "address",
+      "previousTransaction": "hash",
+      "storageRebate": "uint64",
+      "decimals": "uint8",
+      "description": "string",
+      "icon_url": "string",
+      "name": "string",
+      "symbol": "string",
+      "chain": "string"
+    }
+  },
+  {
+    "name": "Event",
+    "description": "An emitted event from a Sui transaction.",
+    "live_preview": "https://suiexplorer.com/txblock/",
+    "fields": {
+      "tx_digest": "hash",
+      "event_seq": "uint64",
+      "package_id": "address",
+      "module": "string",
+      "sender": "address",
+      "event_type": "string"
     }
   }
 ]
