@@ -1,0 +1,61 @@
+[
+  {
+    "name": "Account",
+    "description": "Represents a blockchain account with balance and contract code.",
+    "live_preview": "https://etherscan.io/address/",
+    "fields": {
+      "address": "bytes20",
+      "nonce": "uint64",
+      "balance": "bigint",      
+      "code": "bytes"           
+    }
+  },
+  {
+    "name": "Block",
+    "description": "Represents a blockchain block.",
+    "live_preview": "https://etherscan.io/block/",
+    "fields": {
+      "number": "uint64",
+      "timestamp": "uint64",
+      "size": "uint64",
+      "hash": "bytes32",
+      "parent_hash": "bytes32",
+      "state_root": "bytes32",
+      "transactions_root": "bytes32",
+      "receipts_root": "bytes32",
+      "logs_bloom": "bytes256",
+      "extra_data": "bytes",
+      "mix_hash": "bytes32",
+      "total_difficulty": "bigint",     
+      "base_fee_per_gas": "bigint",
+      "withdrawals_root": "bytes32",
+      "blob_gas_used": "bigint",
+      "excess_blob_gas": "bigint",
+      "parent_beacon_block_root": "bytes32"
+    }
+  },
+  {
+    "name": "Transaction",
+    "description": "Represents a blockchain transaction.",
+    "live_preview": "https://etherscan.io/tx/",
+    "fields": {
+      "hash": "bytes32",
+      "transaction_type": "uint8",
+      "from": "bytes20",
+      "to": "bytes20",
+      "data": "bytes",
+      "value": "bigint",
+      "gas_price": "bigint",
+      "gas": "uint64",
+      "status": "uint8",
+      "chain_id": "uint64",
+      "v": "bigint",
+      "r": "bytes32",
+      "s": "bytes32",
+      "max_fee_per_blob_gas": "bigint",
+      "max_fee_per_gas": "bigint",
+      "max_priority_fee_per_gas": "bigint",
+      "y_parity": "uint8"
+    }
+  }
+]

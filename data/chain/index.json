@@ -12,6 +12,10 @@
             "short_code": "suitest"
         },
         {
+            "name":"Mycelium",
+            "short_code":"mclm"
+        },
+        {
             "name": "Ethereum",
             "short_code": "eth"
         },
