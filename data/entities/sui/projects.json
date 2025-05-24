@@ -1,100 +1,88 @@
 [
   {
-    "name": "Uniswap_pool",
-    "description": "Represents a Uniswap liquidity pool with token pair and state.",
+    "name": "Scallop_Borrow_Dynamics",
+    "description": "Represents the dynamic borrow parameters for a given coin type on the Scallop protocol.",
     "live_preview": "",
     "fields": {
-      "id": "string",
-      "token0": "string",
-      "token1": "string",
-      "fee_tier": "int",
-      "liquidity": "string",
-      "sqrt_price_x96": "string",
-      "tick": "int",
-      "created_at": "timestamp",
-      "updated_at": "timestamp"
-    }
-  },
-  {
-    "name": "Uniswap_liquidity_position",
-    "description": "User liquidity position in a Uniswap pool.",
-    "live_preview": "",
-    "fields": {
-      "id": "string",
-      "pool_id": "string",
-      "owner": "string",
-      "liquidity": "string",
-      "tick_lower": "int",
-      "tick_upper": "int",
-      "tokens_owed0": "string",
-      "tokens_owed1": "string",
-      "created_at": "timestamp",
-      "updated_at": "timestamp"
-    }
-  },
-  {
-    "name": "Uniswap_swap",
-    "description": "Swap event in a Uniswap pool.",
-    "live_preview": "",
-    "fields": {
-      "id": "string",
-      "pool_id": "string",
-      "sender": "string",
-      "recipient": "string",
-      "amount0_in": "string",
-      "amount1_in": "string",
-      "amount0_out": "string",
-      "amount1_out": "string",
-      "sqrt_price_x96": "string",
-      "tick": "int",
-      "liquidity": "string",
-      "timestamp": "timestamp"
-    }
-  },
-  {
-    "name": "Uniswap_mint",
-    "description": "Liquidity added to a Uniswap pool.",
-    "live_preview": "",
-    "fields": {
-      "id": "string",
-      "pool_id": "string",
-      "owner": "string",
-      "amount0": "string",
-      "amount1": "string",
-      "liquidity": "string",
-      "tick_lower": "int",
-      "tick_upper": "int",
-      "timestamp": "timestamp"
-    }
-  },
-  {
-    "name": "Uniswap_burn",
-    "description": "Liquidity removed from a Uniswap pool.",
-    "live_preview": "",
-    "fields": {
-      "id": "string",
-      "pool_id": "string",
-      "owner": "string",
-      "amount0": "string",
-      "amount1": "string",
-      "liquidity": "string",
-      "tick_lower": "int",
-      "tick_upper": "int",
-      "timestamp": "timestamp"
-    }
-  },
-  {
-    "name": "Uniswap_tick",
-    "description": "Tick state in a Uniswap pool.",
-    "live_preview": "",
-    "fields": {
-      "pool_id": "string",
-      "tick_index": "int",
-      "liquidity_gross": "string",
-      "liquidity_net": "string",
-      "fee_growth_outside0_x128": "string",
-      "fee_growth_outside1_x128": "string",
-      "timestamp": "timestamp"
+      "coinType": "string",
+      "borrowIndex": "string",
+      "interestRate": "string",
+      "interestRateScale": "string",
+      "lastUpdated": "timestamp"
     }
   }
+,  
+{
+  "name": "Scallop_Collateral_Deposit",
+  "description": "Tracks collateral deposit events and associated obligations on the Scallop protocol.",
+  "live_preview": "",
+  "fields": {
+    "asset": "string",
+    "amount": "string",
+    "timestampMs": "timestamp",
+    "obligation_id": "string",
+    "obligation": "string"
+  }
+},
+{
+  "name": "Scallop_Flashloan",
+  "description": "Represents a flashloan event on the Scallop protocol.",
+  "live_preview": "",
+  "fields": {
+    "type": "string",
+    "borrower": "string",
+    "asset": "string",
+    "amount": "string",
+    "timestampMs": "timestamp"
+  }
+},
+{
+  "name": "Scallop_Obligation",
+  "description": "Represents a user’s obligation record, including collateral and debt states.",
+  "live_preview": "",
+  "fields": {
+    "obligation_id": "string",
+    "obligation_key": "string",
+    "sender": "string",
+    "version": "string",
+    "timestampMs": "timestamp",
+    "collaterals": "Collateral[]",
+    "debts": "Debt[]",
+    "collaterals_parent_id": "string",
+    "debts_parent_id": "string",
+    "collaterals_count": "int",
+    "debts_count": "int"
+  }
+}
+
+,
+{
+  "name": "Scallop_Repay",
+  "description": "Tracks a repayment event linked to an obligation in Scallop protocol.",
+  "live_preview": "",
+  "fields": {
+    "asset": "string",
+    "amount": "string",
+    "timestampMs": "timestamp",
+    "obligation_id": "string",
+    "obligation": "string"
+  }
+}
+,
+{
+  "name": "Scallop_Borrow",
+  "description": "Represents a borrowing event in the Scallop lending protocol.",
+  "live_preview": "",
+  "fields": {
+    "asset": "string",
+    "amount": "string",
+    "borrowFee": "string",
+    "borrowFeeDiscount": "float",
+    "borrowReferrallFee": "string",
+    "time": "string",
+    "timestampMs": "timestamp",
+    "obligation_id": "string",
+    "obligation": "string"
+  }
+}
 ]
