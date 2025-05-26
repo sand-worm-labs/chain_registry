@@ -1,13 +1,5 @@
 [
   {
-    "name": "Uniswap_Bundle",
-    "description": "Uniswap_Bundle schema.",
-    "fields": {
-      "id": "string",
-      "eth_price_usd": "string"
-    }
-  },
-  {
     "name": "Uniswap_Day_data",
     "description": "Uniswap_Day_data schema.",
     "fields": {
