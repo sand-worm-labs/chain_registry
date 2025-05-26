@@ -1,68 +1,282 @@
-[{
-  "name": "NFT_Collection",
-  "description": "Metadata and info about an NFT collection/project.",
-  "fields": {
-    "collection_id": "string (primary key)",
-    "name": "string",
-    "symbol": "string",
-    "creator_address": "string",
-    "total_supply": "int",
-    "description": "string",
-    "image_url": "string",
-    "external_link": "string",
-    "created_at": "timestamp"
+[
+  {
+    "name": "Uniswap_Bundle",
+    "description": "Uniswap_Bundle schema.",
+    "fields": {
+      "id": "string",
+      "eth_price_usd": "string"
+    }
+  },
+  {
+    "name": "Uniswap_Day_data",
+    "description": "Uniswap_Day_data schema.",
+    "fields": {
+      "id": "string",
+      "date": "timestamp",
+      "volume_eth": "string",
+      "volume_usd": "string",
+      "volume_usd_untracked": "string",
+      "fees_usd": "string",
+      "tx_count": "int",
+      "tvl_usd": "string"
+    }
+  },
+  {
+    "name": "Uniswap_Factory",
+    "description": "Uniswap_Factory schema.",
+    "fields": {
+      "id": "string",
+      "pool_count": "int",
+      "tx_count": "int",
+      "total_volume_usd": "string",
+      "total_volume_eth": "string",
+      "total_fees_usd": "string",
+      "total_fees_eth": "string",
+      "untracked_volume_usd": "string",
+      "total_value_locked_usd": "string",
+      "total_value_locked_eth": "string",
+      "total_value_locked_usd_untracked": "string",
+      "total_value_locked_eth_untracked": "string",
+      "owner": "string"
+    }
+  },
+  {
+    "name": "Uniswap_Pool",
+    "description": "Uniswap_Pool schema.",
+    "fields": {
+      "id": "string",
+      "created_at_timestamp": "timestamp",
+      "created_at_block_number": "int",
+      "token0_id": "string",
+      "token1_id": "string",
+      "fee_tier": "int",
+      "liquidity": "string",
+      "sqrt_price": "string",
+      "fee_growth_global0_x128": "string",
+      "fee_growth_global1_x128": "string",
+      "token0_price": "string",
+      "token1_price": "string",
+      "tick": "int",
+      "observation_index": "string",
+      "volume_token0": "string",
+      "volume_token1": "string",
+      "volume_usd": "string",
+      "untracked_volume_usd": "string",
+      "fees_usd": "string",
+      "tx_count": "int",
+      "collected_fees_token0": "string",
+      "collected_fees_token1": "string",
+      "collected_fees_usd": "string",
+      "total_value_locked_token0": "string",
+      "total_value_locked_token1": "string",
+      "total_value_locked_eth": "string",
+      "total_value_locked_usd": "string",
+      "total_value_locked_usd_untracked": "string",
+      "liquidity_provider_count": "string"
+    }
+  },
+  {
+    "name": "Uniswap_Pool_day_data",
+    "description": "Uniswap_Pool_day_data schema.",
+    "fields": {
+      "id": "string",
+      "date": "timestamp",
+      "pool_id": "string",
+      "liquidity": "string",
+      "sqrt_price": "string",
+      "token0_price": "string",
+      "token1_price": "string",
+      "tick": "int",
+      "fee_growth_global0_x128": "string",
+      "fee_growth_global1_x128": "string",
+      "tvl_usd": "string",
+      "volume_token0": "string",
+      "volume_token1": "string",
+      "volume_usd": "string",
+      "fees_usd": "string",
+      "tx_count": "int",
+      "open": "string",
+      "high": "string",
+      "low": "string",
+      "close": "string"
+    }
+  },
+  {
+    "name": "Uniswap_Pool_hour_data",
+    "description": "Uniswap_Pool_hour_data schema.",
+    "fields": {
+      "id": "string",
+      "date": "timestamp",
+      "pool_id": "string",
+      "liquidity": "string",
+      "sqrt_price": "string",
+      "token0_price": "string",
+      "token1_price": "string",
+      "tick": "int",
+      "fee_growth_global0_x128": "string",
+      "fee_growth_global1_x128": "string",
+      "tvl_usd": "string",
+      "volume_token0": "string",
+      "volume_token1": "string",
+      "volume_usd": "string",
+      "fees_usd": "string",
+      "tx_count": "int",
+      "open": "string",
+      "high": "string",
+      "low": "string",
+      "close": "string"
+    }
+  },
+  {
+    "name": "Uniswap_Position",
+    "description": "Uniswap_Position schema.",
+    "fields": {
+      "id": "string",
+      "owner": "string",
+      "pool_id": "string",
+      "token0_id": "string",
+      "token1_id": "string",
+      "liquidity": "string",
+      "deposited_token0": "string",
+      "deposited_token1": "string",
+      "withdrawn_token0": "string",
+      "withdrawn_token1": "string",
+      "collected_fees_token0": "string",
+      "collected_fees_token1": "string",
+      "fee_growth_inside0_last_x128": "string",
+      "fee_growth_inside1_last_x128": "string"
+    }
+  },
+  {
+    "name": "Uniswap_Position_snapshot",
+    "description": "Uniswap_Position_snapshot schema.",
+    "fields": {
+      "id": "string",
+      "owner": "string",
+      "pool_id": "string",
+      "position_id": "string",
+      "block_number": "int",
+      "timestamp": "timestamp",
+      "liquidity": "string",
+      "deposited_token0": "string",
+      "deposited_token1": "string",
+      "withdrawn_token0": "string",
+      "withdrawn_token1": "string",
+      "collected_fees_token0": "string",
+      "collected_fees_token1": "string",
+      "transaction_id": "string",
+      "fee_growth_inside0_last_x128": "string",
+      "fee_growth_inside1_last_x128": "string"
+    }
+  },
+  {
+    "name": "Uniswap_Tick",
+    "description": "Uniswap_Tick schema.",
+    "fields": {
+      "id": "string",
+      "pool_address": "string",
+      "tick_idx": "string",
+      "pool_id": "string",
+      "liquidity_gross": "string",
+      "liquidity_net": "string",
+      "price0": "string",
+      "price1": "string",
+      "volume_token0": "string",
+      "volume_token1": "string",
+      "volume_usd": "string",
+      "untracked_volume_usd": "string",
+      "fees_usd": "string",
+      "collected_fees_token0": "string",
+      "collected_fees_token1": "string",
+      "collected_fees_usd": "string",
+      "created_at_timestamp": "timestamp",
+      "created_at_block_number": "int",
+      "liquidity_provider_count": "string",
+      "fee_growth_outside0_x128": "string",
+      "fee_growth_outside1_x128": "string"
+    }
+  },
+  {
+    "name": "Uniswap_Tick_day_data",
+    "description": "Uniswap_Tick_day_data schema.",
+    "fields": {
+      "id": "string",
+      "date": "timestamp",
+      "tick_id": "string",
+      "liquidity_gross": "string",
+      "liquidity_net": "string",
+      "volume_token0": "string",
+      "volume_token1": "string",
+      "volume_usd": "string",
+      "fees_usd": "string",
+      "fee_growth_outside0_x128": "string",
+      "fee_growth_outside1_x128": "string"
+    }
+  },
+  {
+    "name": "Uniswap_Tick_hour_data",
+    "description": "Uniswap_Tick_hour_data schema.",
+    "fields": {
+      "id": "string",
+      "date": "timestamp",
+      "pool_id": "string",
+      "tick_id": "string",
+      "liquidity_gross": "string",
+      "liquidity_net": "string",
+      "volume_token0": "string",
+      "volume_token1": "string",
+      "volume_usd": "string",
+      "fees_usd": "string"
+    }
+  },
+  {
+    "name": "Uniswap_Token",
+    "description": "Uniswap_Token schema.",
+    "fields": {
+      "id": "string",
+      "symbol": "string",
+      "name": "string",
+      "decimals": "int",
+      "total_supply": "string",
+      "volume": "string",
+      "volume_usd": "string",
+      "untracked_volume_usd": "string",
+      "fees_usd": "string",
+      "tx_count": "int",
+      "pool_count": "int",
+      "total_value_locked": "string",
+      "total_value_locked_usd": "string",
+      "derived_eth": "string"
+    }
+  },
+  {
+    "name": "Uniswap_Token_day_data",
+    "description": "Uniswap_Token_day_data schema.",
+    "fields": {
+      "id": "string",
+      "date": "timestamp",
+      "token_id": "string",
+      "volume": "string",
+      "volume_usd": "string",
+      "fees_usd": "string",
+      "tx_count": "int",
+      "total_value_locked": "string",
+      "price_usd": "string"
+    }
+  },
+  {
+    "name": "Uniswap_Token_hour_data",
+    "description": "Uniswap_Token_hour_data schema.",
+    "fields": {
+      "id": "string",
+      "date": "timestamp",
+      "token_id": "string",
+      "volume": "string",
+      "volume_usd": "string",
+      "fees_usd": "string",
+      "tx_count": "int",
+      "total_value_locked": "string",
+      "price_usd": "string"
+    }
   }
-},
-{
-  "name": "NFT_Token",
-  "description": "Individual NFT token info and metadata.",
-  "fields": {
-    "token_id": "string (primary key)",
-    "collection_id": "string",
-    "owner_address": "string",
-    "token_uri": "string",
-    "metadata": "jsonb",
-    "minted_at": "timestamp",
-    "last_transferred_at": "timestamp"
-  }
-},
-{
-  "name": "NFT_Transfer",
-  "description": "Records each transfer event of NFT tokens.",
-  "fields": {
-    "transfer_id": "string (primary key)",
-    "token_id": "string",
-    "from_address": "string",
-    "to_address": "string",
-    "transaction_hash": "string",
-    "block_number": "int",
-    "timestamp": "timestamp"
-  }
-},
-{
-  "name": "NFT_Royalty",
-  "description": "Tracks royalty recipients and percentages for NFTs.",
-  "fields": {
-    "collection_id": "string",
-    "recipient_address": "string",
-    "royalty_percentage": "decimal",
-    "updated_at": "timestamp"
-  }
-},
-{
-  "name": "NFT_Auction",
-  "description": "Details about NFT auctions or sales on marketplace.",
-  "fields": {
-    "auction_id": "string (primary key)",
-    "token_id": "string",
-    "seller_address": "string",
-    "start_price": "decimal",
-    "end_price": "decimal",
-    "start_time": "timestamp",
-    "end_time": "timestamp",
-    "final_price": "decimal",
-    "winner_address": "string",
-    "status": "string"
-  }
-}
 ]

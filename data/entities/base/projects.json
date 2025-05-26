@@ -1,100 +1,109 @@
 [
   {
-    "name": "Uniswap_pool",
-    "description": "Represents a Uniswap liquidity pool with token pair and state.",
-    "live_preview": "",
+    "name": "Uniswap_Burn",
+    "description": "Uniswap_Burn event schema.",
     "fields": {
       "id": "string",
-      "token0": "string",
-      "token1": "string",
-      "fee_tier": "int",
-      "liquidity": "string",
-      "sqrt_price_x96": "string",
-      "tick": "int",
-      "created_at": "timestamp",
-      "updated_at": "timestamp"
-    }
-  },
-  {
-    "name": "Uniswap_liquidity_position",
-    "description": "User liquidity position in a Uniswap pool.",
-    "live_preview": "",
-    "fields": {
-      "id": "string",
+      "transaction_id": "string",
       "pool_id": "string",
       "owner": "string",
-      "liquidity": "string",
+      "amount0": "string",
+      "amount1": "string",
+      "amount_usd": "string",
       "tick_lower": "int",
       "tick_upper": "int",
-      "tokens_owed0": "string",
-      "tokens_owed1": "string",
-      "created_at": "timestamp",
-      "updated_at": "timestamp"
+      "timestamp": "timestamp",
+      "log_index": "int"
     }
   },
   {
-    "name": "Uniswap_swap",
-    "description": "Swap event in a Uniswap pool.",
-    "live_preview": "",
+    "name": "Uniswap_Collect",
+    "description": "Uniswap_Collect event schema.",
     "fields": {
       "id": "string",
+      "transaction_id": "string",
+      "pool_id": "string",
+      "owner": "string",
+      "recipient": "string",
+      "amount0": "string",
+      "amount1": "string",
+      "amount_usd": "string",
+      "timestamp": "timestamp",
+      "log_index": "int"
+    }
+  },
+  {
+    "name": "Uniswap_Flash",
+    "description": "Uniswap_Flash event schema.",
+    "fields": {
+      "id": "string",
+      "transaction_id": "string",
+      "pool_id": "string",
+      "recipient": "string",
+      "amount0": "string",
+      "amount1": "string",
+      "paid0": "string",
+      "paid1": "string",
+      "timestamp": "timestamp",
+      "log_index": "int"
+    }
+  },
+  {
+    "name": "Uniswap_Mint",
+    "description": "Uniswap_Mint event schema.",
+    "fields": {
+      "id": "string",
+      "transaction_id": "string",
+      "pool_id": "string",
+      "owner": "string",
+      "amount0": "string",
+      "amount1": "string",
+      "amount_usd": "string",
+      "tick_lower": "int",
+      "tick_upper": "int",
+      "timestamp": "timestamp",
+      "log_index": "int"
+    }
+  },
+  {
+    "name": "Uniswap_Swap",
+    "description": "Uniswap_Swap event schema.",
+    "fields": {
+      "id": "string",
+      "transaction_id": "string",
       "pool_id": "string",
       "sender": "string",
       "recipient": "string",
-      "amount0_in": "string",
-      "amount1_in": "string",
-      "amount0_out": "string",
-      "amount1_out": "string",
+      "amount0": "string",
+      "amount1": "string",
+      "amount_usd": "string",
       "sqrt_price_x96": "string",
       "tick": "int",
-      "liquidity": "string",
+      "log_index": "int",
       "timestamp": "timestamp"
     }
   },
   {
-    "name": "Uniswap_mint",
-    "description": "Liquidity added to a Uniswap pool.",
-    "live_preview": "",
+    "name": "Uniswap_Tx",
+    "description": "Uniswap_Tx raw transaction metadata.",
     "fields": {
       "id": "string",
-      "pool_id": "string",
-      "owner": "string",
-      "amount0": "string",
-      "amount1": "string",
-      "liquidity": "string",
-      "tick_lower": "int",
-      "tick_upper": "int",
-      "timestamp": "timestamp"
+      "block_number": "int",
+      "timestamp": "timestamp",
+      "gas_used": "int",
+      "gas_price": "string",
+      "tx_hash": "string",
+      "tx_index": "int"
     }
   },
   {
-    "name": "Uniswap_burn",
-    "description": "Liquidity removed from a Uniswap pool.",
-    "live_preview": "",
+    "name": "Uniswap_Migrations",
+    "description": "Uniswap_Migrations schema for meta tracking of schema changes.",
     "fields": {
       "id": "string",
-      "pool_id": "string",
-      "owner": "string",
-      "amount0": "string",
-      "amount1": "string",
-      "liquidity": "string",
-      "tick_lower": "int",
-      "tick_upper": "int",
-      "timestamp": "timestamp"
-    }
-  },
-  {
-    "name": "Uniswap_tick",
-    "description": "Tick state in a Uniswap pool.",
-    "live_preview": "",
-    "fields": {
-      "pool_id": "string",
-      "tick_index": "int",
-      "liquidity_gross": "string",
-      "liquidity_net": "string",
-      "fee_growth_outside0_x128": "string",
-      "fee_growth_outside1_x128": "string",
-      "timestamp": "timestamp"
+      "block_number": "int",
+      "timestamp": "timestamp",
+      "name": "string"
     }
   }
 ]
