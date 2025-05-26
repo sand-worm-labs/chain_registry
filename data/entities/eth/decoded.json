@@ -1,7 +1,7 @@
 [
   {
-    "name": "Uniswap_Day_data",
-    "description": "Uniswap_Day_data schema.",
+    "name": "uniswap_Day_data",
+    "description": "uniswap_Day_data schema.",
     "fields": {
       "id": "string",
       "date": "timestamp",
@@ -14,8 +14,8 @@
     }
   },
   {
-    "name": "Uniswap_Factory",
-    "description": "Uniswap_Factory schema.",
+    "name": "uniswap_Factory",
+    "description": "uniswap_Factory schema.",
     "fields": {
       "id": "string",
       "pool_count": "int",
@@ -33,8 +33,8 @@
     }
   },
   {
-    "name": "Uniswap_Pool",
-    "description": "Uniswap_Pool schema.",
+    "name": "uniswap_Pool",
+    "description": "uniswap_Pool schema.",
     "fields": {
       "id": "string",
       "created_at_timestamp": "timestamp",
@@ -68,8 +68,8 @@
     }
   },
   {
-    "name": "Uniswap_Pool_day_data",
-    "description": "Uniswap_Pool_day_data schema.",
+    "name": "uniswap_Pool_day_data",
+    "description": "uniswap_Pool_day_data schema.",
     "fields": {
       "id": "string",
       "date": "timestamp",
@@ -94,8 +94,8 @@
     }
   },
   {
-    "name": "Uniswap_Pool_hour_data",
-    "description": "Uniswap_Pool_hour_data schema.",
+    "name": "uniswap_Pool_hour_data",
+    "description": "uniswap_Pool_hour_data schema.",
     "fields": {
       "id": "string",
       "date": "timestamp",
@@ -120,8 +120,8 @@
     }
   },
   {
-    "name": "Uniswap_Position",
-    "description": "Uniswap_Position schema.",
+    "name": "uniswap_Position",
+    "description": "uniswap_Position schema.",
     "fields": {
       "id": "string",
       "owner": "string",
@@ -140,8 +140,8 @@
     }
   },
   {
-    "name": "Uniswap_Position_snapshot",
-    "description": "Uniswap_Position_snapshot schema.",
+    "name": "uniswap_Position_snapshot",
+    "description": "uniswap_Position_snapshot schema.",
     "fields": {
       "id": "string",
       "owner": "string",
@@ -162,8 +162,8 @@
     }
   },
   {
-    "name": "Uniswap_Tick",
-    "description": "Uniswap_Tick schema.",
+    "name": "uniswap_Tick",
+    "description": "uniswap_Tick schema.",
     "fields": {
       "id": "string",
       "pool_address": "string",
@@ -189,8 +189,8 @@
     }
   },
   {
-    "name": "Uniswap_Tick_day_data",
-    "description": "Uniswap_Tick_day_data schema.",
+    "name": "uniswap_Tick_day_data",
+    "description": "uniswap_Tick_day_data schema.",
     "fields": {
       "id": "string",
       "date": "timestamp",
@@ -206,8 +206,8 @@
     }
   },
   {
-    "name": "Uniswap_Tick_hour_data",
-    "description": "Uniswap_Tick_hour_data schema.",
+    "name": "uniswap_Tick_hour_data",
+    "description": "uniswap_Tick_hour_data schema.",
     "fields": {
       "id": "string",
       "date": "timestamp",
@@ -222,8 +222,8 @@
     }
   },
   {
-    "name": "Uniswap_Token",
-    "description": "Uniswap_Token schema.",
+    "name": "uniswap_Token",
+    "description": "uniswap_Token schema.",
     "fields": {
       "id": "string",
       "symbol": "string",
@@ -242,8 +242,8 @@
     }
   },
   {
-    "name": "Uniswap_Token_day_data",
-    "description": "Uniswap_Token_day_data schema.",
+    "name": "uniswap_Token_day_data",
+    "description": "uniswap_Token_day_data schema.",
     "fields": {
       "id": "string",
       "date": "timestamp",
@@ -257,8 +257,8 @@
     }
   },
   {
-    "name": "Uniswap_Token_hour_data",
-    "description": "Uniswap_Token_hour_data schema.",
+    "name": "uniswap_Token_hour_data",
+    "description": "uniswap_Token_hour_data schema.",
     "fields": {
       "id": "string",
       "date": "timestamp",
