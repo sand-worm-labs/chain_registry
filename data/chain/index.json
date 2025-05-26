@@ -4,6 +4,14 @@
             "short_code": "sui"
         },
         {
+            "name": "Base",
+            "short_code": "base"
+        },
+        {
+            "name": "Ethereum",
+            "short_code": "eth"
+        },
+        {
             "name": "SuiDevnet",
             "short_code": "suidev"
         },
@@ -12,21 +20,13 @@
             "short_code": "suitest"
         },
         {
-            "name": "Ethereum",
-            "short_code": "eth"
-        },
-        {
             "name": "Sepolia",
             "short_code": "sepolia"
         },
         {
             "name": "Arbitrum",
             "short_code": "arb"
-        },
-        {
-            "name": "Base",
-            "short_code": "base"
-        },
+        },  
         {
             "name": "Blast",
             "short_code": "blast"
