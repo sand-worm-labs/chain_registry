@@ -1,88 +1,173 @@
 [
   {
-    "name": "Scallop_Borrow_Dynamics",
-    "description": "Represents the dynamic borrow parameters for a given coin type on the Scallop protocol.",
-    "live_preview": "",
+    "name": "cetus_add_liquidity",
+    "description": "cetus_add_liquidity schema",
     "fields": {
+      "id": "string",
+      "pool": "string",
+      "position": "string",
+      "tickLower": "bigint",
+      "tickUpper": "bigint",
+      "liquidity": "string",
+      "amountA": "bigint",
+      "amountB": "bigint",
+      "txDigest": "string",
+      "eventSeq": "string",
+      "sender": "string",
+      "timestampMs": "bigint"
+    }
+  },
+  {
+    "name": "cetus_collect_fee",
+    "description": "cetus_collect_fee schema",
+    "fields": {
+      "id": "string",
+      "pool": "string",
+      "position": "string",
+      "amountA": "bigint",
+      "amountB": "bigint",
+      "txDigest": "string",
+      "eventSeq": "string",
+      "sender": "string",
+      "timestampMs": "bigint"
+    }
+  },
+  {
+    "name": "cetus_flash_loan",
+    "description": "cetus_flash_loan schema",
+    "fields": {
+      "id": "string",
+      "pool": "string",
+      "loanA": "boolean",
+      "partner": "string",
+      "amount": "bigint",
+      "feeAmount": "bigint",
+      "txDigest": "string",
+      "eventSeq": "string"
+    }
+  },
+  {
+    "name": "cetus_remove_liquidity",
+    "description": "cetus_remove_liquidity schema",
+    "fields": {
+      "id": "string",
+      "pool": "string",
+      "position": "string",
+      "tickLower": "bigint",
+      "tickUpper": "bigint",
+      "liquidity": "string",
+      "amountA": "bigint",
+      "amountB": "bigint",
+      "txDigest": "string",
+      "eventSeq": "string",
+      "sender": "string",
+      "timestampMs": "bigint"
+    }
+  },
+  {
+    "name": "cetus_swap",
+    "description": "cetus_swap schema",
+    "fields": {
+      "id": "string",
+      "pool": "string",
+      "amount_in": "bigint",
+      "amount_out": "bigint",
+      "atob": "boolean",
+      "fee_amount": "bigint",
+      "txDigest": "string",
+      "eventSeq": "string",
+      "sender": "string",
+      "timestampMs": "bigint"
+    }
+  } ,{
+    "name": "scallop_borrow_dynamic",
+    "description": "scallop_borrow_dynamic schema",
+    "fields": {
+      "id": "string",
       "coinType": "string",
       "borrowIndex": "string",
       "interestRate": "string",
       "interestRateScale": "string",
-      "lastUpdated": "timestamp"
+      "lastUpdated": "string"
+    }
+  },
+  {
+    "name": "scallop_collateral",
+    "description": "scallop_collateral schema",
+    "fields": {
+      "id": "string",
+      "asset": "string",
+      "amount": "string",
+      "obligation_id": "string"
+    }
+  },
+  {
+    "name": "scallop_debt",
+    "description": "scallop_debt schema",
+    "fields": {
+      "id": "string",
+      "asset": "string",
+      "amount": "string",
+      "borrowIndex": "string",
+      "obligation_id": "string"
+    }
+  },
+  {
+    "name": "scallop_deposit",
+    "description": "scallop_deposit schema",
+    "fields": {
+      "id": "string",
+      "asset": "string",
+      "amount": "string",
+      "timestampMs": "string",
+      "obligation_id": "string"
+    }
+  },
+  {
+    "name": "scallop_mint",
+    "description": "scallop_mint schema",
+    "fields": {
+      "id": "string",
+      "depositAsset": "string",
+      "depositAmount": "string",
+      "mintAsset": "string",
+      "mintAmount": "string",
+      "minter": "string",
+      "mintTime": "string",
+      "timestampMs": "string"
+    }
+  },
+  {
+    "name": "scallop_obligation",
+    "description": "scallop_obligation schema",
+    "fields": {
+      "id": "string",
+      "obligation_id": "string",
+      "obligation_key": "string",
+      "sender": "string",
+      "version": "string",
+      "timestampMs": "string",
+      "collaterals_parent_id": "string",
+      "debts_parent_id": "string",
+      "collaterals_count": "int",
+      "debts_count": "int",
+      "createdAt": "timestamp",
+      "updatedAt": "timestamp"
+    }
+  },
+  {
+    "name": "scallop_redeem",
+    "description": "scallop_redeem schema",
+    "fields": {
+      "id": "string",
+      "sender": "string",
+      "withdrawAsset": "string",
+      "withdrawAmount": "string",
+      "burnAsset": "string",
+      "burnAmount": "string",
+      "redeemer": "string",
+      "redeemTime": "string",
+      "timestampMs": "string"
     }
   }
-,  
-{
-  "name": "Scallop_Collateral_Deposit",
-  "description": "Tracks collateral deposit events and associated obligations on the Scallop protocol.",
-  "live_preview": "",
-  "fields": {
-    "asset": "string",
-    "amount": "string",
-    "timestampMs": "timestamp",
-    "obligation_id": "string",
-    "obligation": "string"
-  }
-},
-{
-  "name": "Scallop_Flashloan",
-  "description": "Represents a flashloan event on the Scallop protocol.",
-  "live_preview": "",
-  "fields": {
-    "type": "string",
-    "borrower": "string",
-    "asset": "string",
-    "amount": "string",
-    "timestampMs": "timestamp"
-  }
-},
-{
-  "name": "Scallop_Obligation",
-  "description": "Represents a user’s obligation record, including collateral and debt states.",
-  "live_preview": "",
-  "fields": {
-    "obligation_id": "string",
-    "obligation_key": "string",
-    "sender": "string",
-    "version": "string",
-    "timestampMs": "timestamp",
-    "collaterals": "Collateral[]",
-    "debts": "Debt[]",
-    "collaterals_parent_id": "string",
-    "debts_parent_id": "string",
-    "collaterals_count": "int",
-    "debts_count": "int"
-  }
-}
-
-,
-{
-  "name": "Scallop_Repay",
-  "description": "Tracks a repayment event linked to an obligation in Scallop protocol.",
-  "live_preview": "",
-  "fields": {
-    "asset": "string",
-    "amount": "string",
-    "timestampMs": "timestamp",
-    "obligation_id": "string",
-    "obligation": "string"
-  }
-}
-,
-{
-  "name": "Scallop_Borrow",
-  "description": "Represents a borrowing event in the Scallop lending protocol.",
-  "live_preview": "",
-  "fields": {
-    "asset": "string",
-    "amount": "string",
-    "borrowFee": "string",
-    "borrowFeeDiscount": "float",
-    "borrowReferrallFee": "string",
-    "time": "string",
-    "timestampMs": "timestamp",
-    "obligation_id": "string",
-    "obligation": "string"
-  }
-}
 ]
